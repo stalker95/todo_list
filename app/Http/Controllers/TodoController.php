@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Todo;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\TodoCreateRequest;
+use App\Http\Requests\TodoUpdateRequest;
 
 class TodoController extends Controller
 {
@@ -93,7 +94,7 @@ class TodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TodoUpdateRequest $request, $id)
     {
 
         $todo = Todo::where('id', $id)->first();
